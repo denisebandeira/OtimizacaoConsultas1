@@ -1,13 +1,24 @@
 {
-  "name": "Oracle DB with SQL*Plus",
-  "context": ".",
-  "dockerComposeFile": ["../docker-compose.yml"],
-  "service": "sqlplus",
+  "name": "oracle-db",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "oracle",
+  "workspaceFolder": "/workspaces",
   "extensions": [
-    "ms-azuretools.vscode-docker",
+    "oracle.oracle-developer-tools-for-visual-studio-code"
   ],
-  "postCreateCommand": "docker-compose up -d",
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  }
+    "sqltools.connections": [
+      {
+        "name": "OracleDB",
+        "driver": "Oracle",
+        "server": "localhost",
+        "port": 1521,
+        "database": "ORCL",
+        "username": "system",
+        "password": "oracle",
+        "connectString": "localhost:1521/ORCL"
+      }
+    ]
+  },
+  "postCreateCommand": "echo 'Container setup complete!'"
 }
