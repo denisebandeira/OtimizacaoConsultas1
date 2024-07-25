@@ -1,20 +1,22 @@
 version: '3.8'
 
 services:
-  oracle-db:
+  oracle:
     image: oracleinanutshell/oracle-xe-11g
+    container_name: oracle-db
+    environment:
+      - ORACLE_PWD=oracle
+      - ORACLE_ALLOW_REMOTE=true
     ports:
       - "1521:1521"
-      - "8080:8080"
-    environment:
-      ORACLE_ALLOW_REMOTE: 'true'
-      ORACLE_DISABLE_ASYNCH_IO: 'true'
+      - "5500:5500"
     volumes:
       - oracle-data:/u01/app/oracle
-
-  sqlplus:
-    image: oracleinanutshell/oracle-xe-11g
-    entrypoint: ["/bin/bash", "-c", "tail -f /dev/null"]
+    networks:
+      - oracle-network
 
 volumes:
   oracle-data:
+
+networks:
+  oracle-network:
