@@ -1,6 +1,5 @@
 {
   "name": "Oracle DB with SQL*Plus",
-  "dockerFile": "Dockerfile",
   "context": ".",
   "dockerComposeFile": ["../docker-compose.yml"],
   "service": "sqlplus",
