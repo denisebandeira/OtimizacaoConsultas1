@@ -1,4 +1,4 @@
-FROM oracleinanutshell/oracle-xe-11g
+#FROM oracleinanutshell/oracle-xe-11g
 
 #COPY import.sh /docker-entrypoint-initdb.d/
 #COPY export.dmp /docker-entrypoint-initdb.d/
