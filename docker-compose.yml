@@ -14,11 +14,9 @@ services:
     volumes:
       - oracle-data:/u01/app/oracle
 
-  sqlcl:
-    image: oracle/dbtools:sqlcl
-    depends_on:
-      - oracle-db
-    entrypoint: ["/bin/sh", "-c", "while :; do sleep 10; done"]
+  sqlplus:
+    image: oracleinanutshell/oracle-xe-11g
+    entrypoint: ["/bin/bash", "-c", "tail -f /dev/null"]
 
 volumes:
   oracle-data:
