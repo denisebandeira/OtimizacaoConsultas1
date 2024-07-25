@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  oracle-db:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    ports:
+      - "1521:1521"
+      - "8080:8080"
+    environment:
+      ORACLE_ALLOW_REMOTE: 'true'
+      ORACLE_DISABLE_ASYNCH_IO: 'true'
+    volumes:
+      - oracle-data:/u01/app/oracle
+
+  sqlcl:
+    image: oracle/dbtools:sqlcl
+    depends_on:
+      - oracle-db
+    entrypoint: ["/bin/sh", "-c", "while :; do sleep 10; done"]
+
+volumes:
+  oracle-data:

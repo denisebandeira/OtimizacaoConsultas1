@@ -1,0 +1,13 @@
+{
+    "name": "Oracle DB with SQLcl",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "sqlcl",
+    "workspaceFolder": "/workspace",
+    "extensions": [
+      "ms-azuretools.vscode-docker"
+    ],
+    "postCreateCommand": "docker-compose up -d",
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    }
+  }  
