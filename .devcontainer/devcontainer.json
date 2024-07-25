@@ -2,11 +2,8 @@
   "name": "Oracle DB with SQL*Plus",
   "dockerComposeFile": ["../docker-compose.yml"],
   "service": "sqlplus",
-  "workspaceFolder": "/workspace",
   "extensions": [
     "ms-azuretools.vscode-docker",
-    "oracle.oracledevtools",
-    "mtxr.sqltools"
   ],
   "postCreateCommand": "docker-compose up -d",
   "settings": {
