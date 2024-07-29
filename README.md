@@ -1,41 +1,36 @@
-# Oracle Database Environment with SQLcl for Codespaces
+# Ambiente Oracle com SQL*Plus no Codespaces
 
-This repository provides a Docker-based environment for Oracle Database and SQLcl, configured to run in GitHub Codespaces.
+Este repositório fornece um ambiente baseado em Docker para Oracle Database e SQL*Plus, configurado para ser executado no GitHub Codespaces.
 
-## Getting Started
+## Introdução
 
-### Prerequisites
+### Pré-requisitos
 
-- GitHub account
-- GitHub Codespaces enabled on your account
+- Conta no GitHub
+- GitHub Codespaces habilitado na sua conta
 
-### Steps to Set Up
+### Passos para Configuração
 
-1. **Clone the Repository:**
-   - Go to the repository on GitHub.
-   - Click on the `<> Code` button and select `Open with GitHub Codespaces` if available, or click `Open with Visual Studio Code` if you have the GitHub Codespaces extension installed.
+1. **Clonar o Repositório:**
+   - Vá para o repositório no GitHub.
+   - Clique no botão `<> Code` e selecione `Open with GitHub Codespaces` se disponível, ou clique em `Open with Visual Studio Code` se você tiver a extensão do GitHub Codespaces instalada.
 
-2. **Start the Environment:**
-   - The environment will automatically start and configure the necessary containers, including setting up the database schema and initial data from the provided dump file.
+2. **Iniciar o Ambiente:**
+   - O ambiente será iniciado automaticamente e configurará os contêineres necessários, incluindo a configuração do esquema do banco de dados e os dados iniciais a partir do arquivo de dump fornecido.
 
-3. **Access SQLcl:**
-   - Open a terminal in Codespaces and access the SQLcl container:
-     ```sh
-     docker exec -it $(docker ps -qf "name=sqlcl") /bin/bash
-     ```
+3. **Acessar o SQLcl:**
+   - Abra um terminal no Codespaces e execute:
+      sqlplus 
 
-4. **Connect to Oracle Database:**
-   - Inside the SQLcl container, connect to the Oracle Database:
-     ```sh
-     sql system/oracle@oracle-db:1521/XE
-     ```
+4. **Conectar ao Oracle Database:**
+- Execute suas instruções SQL
 
 ## Volumes
 
-- `oracle-data`: Persists the data of the Oracle Database.
+- `oracle-data`: Persiste os dados do Oracle Database.
 
-## Additional Information
+## Informações Adicionais
 
-- Ensure that you replace `oracle` with the actual password for the Oracle `system` user.
+- Certifique-se de substituir `oracle` pela senha real do usuário `system` do Oracle.
 
-The SQL scripts for setting up the database are automatically executed when the database container is initialized.
+Os scripts SQL para configurar o banco de dados são executados automaticamente quando o contêiner do banco de dados é inicializado.
