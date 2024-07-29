@@ -18,19 +18,13 @@ Este repositório fornece um ambiente baseado em Docker para Oracle Database e S
 2. **Iniciar o Ambiente:**
    - O ambiente será iniciado automaticamente e configurará os contêineres necessários, incluindo a configuração do esquema do banco de dados e os dados iniciais a partir do arquivo de dump fornecido.
 
-3. **Acessar o SQLcl:**
+3. **Acessar o SQL*Plus:**
    - Abra um terminal no Codespaces e execute:
-      sqlplus 
-
+     sqlplus
+     usuario: system
+     senha: oracle
+     
 4. **Conectar ao Oracle Database:**
 - Execute suas instruções SQL
-
-## Volumes
-
-- `oracle-data`: Persiste os dados do Oracle Database.
-
-## Informações Adicionais
-
-- Certifique-se de substituir `oracle` pela senha real do usuário `system` do Oracle.
 
 Os scripts SQL para configurar o banco de dados são executados automaticamente quando o contêiner do banco de dados é inicializado.
