@@ -14,9 +14,3 @@ services:
       - oracle-data:/u01/app/oracle
     networks:
       - oracle-network
-
-volumes:
-  oracle-data:
-
-networks:
-  oracle-network:
